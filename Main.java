@@ -1,10 +1,16 @@
 package Layouts;
 
-import java.awt.BorderLayout;
+import javax.swing.SwingUtilities;
 
 public class Main {
     public static void main(String[] args) {
-        GridLayoutExample example = new GridLayoutExample();
-        example.createFrame();
+        SwingUtilities.invokeLater(() -> {
+            GridLayoutExample example = new GridLayoutExample();
+            example.createFrame().setVisible(true);
+            
+            new MainApplication();
+            new TabbedApplication();
+            new EmployeeRegistrationSystem();
+        });
     }
 }
